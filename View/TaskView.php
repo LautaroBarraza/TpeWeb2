@@ -29,4 +29,17 @@ function showUnDeportista($deportista){
     $smarty->assign('deportista', $deportista);
     $smarty->display('templates/deportista.tpl');
 }
+
+function showUnDeporte($deporte){
+    $arrayDeporte = array();
+    foreach($deporte as $deportistas){
+        array_push($arrayDeporte, $deportistas);
+    }
+    $smarty = new Smarty();
+    $smarty->assign('titulo', $arrayDeporte[0]->deporte);
+    $smarty->assign('deportistas', $arrayDeporte);
+    $smarty->display('templates/deporte.tpl');
+
+}
+
 }

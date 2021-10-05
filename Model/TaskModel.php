@@ -29,6 +29,13 @@ class TaskModel{
     
     }
 
+    function getDeporte($deporte){
+        $sentencia = $this->db->prepare("SELECT deportistas.*, deporte.deporte as deporte FROM deportistas JOIN deporte ON deportistas.id_deporte = deporte.id_deporte WHERE deporte=?");
+        $sentencia->execute(array($deporte));
+        $deporte= $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $deporte;
+    }
+
     function getDeportistasConDeporte() {
         $query = $this->db->prepare(
             "SELECT deportistas.*, deporte.deporte as deporte FROM deportistas JOIN deporte ON deportistas.id_deporte = deporte.id_deporte");

@@ -22,6 +22,9 @@ switch($params[0]){
     case 'Deportistas':
         $controller->showDeportista($params[1]);
         break;
+    case 'Deporte' :
+        $controller->showDeporte($params[1]);
+        break;
     /*case 'insert':
         $controller->createTask();
     break;

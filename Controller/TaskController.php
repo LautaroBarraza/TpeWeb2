@@ -18,6 +18,11 @@ class TaskController{
         $deportista = $this->model->getDeportista($deportista);
         $this->view->showUnDeportista($deportista);
     }
+
+    function showDeporte($deporte){
+        $deporte = $this->model->getDeporte($deporte);
+        $this->view->showUnDeporte($deporte);
+    }
     
     
     

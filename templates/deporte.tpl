@@ -12,10 +12,10 @@
 
             <ul>
             {foreach from=$deportistas item=$deportista}
-            <li>Deporte: <a href="Deporte/{$deportista->deporte}">{$deportista->deporte}</a> Deportista: <a href="Deportistas/{$deportista->id_deportista}">{$deportista->nombre}</a>,{$deportista->apellido}</li><a href="deleteTask/{$deportista->id_deportista}">borrar</a>
+            <li>{$deportista->nombre},{$deportista->apellido}</li>
+            <li>{$deportista->edad}</li>
             {/foreach}
             <ul>
-            {include file="./form.tpl" }
     
        </body>
         </html>
