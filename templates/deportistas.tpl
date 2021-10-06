@@ -15,7 +15,11 @@
             <li>Deporte: <a href="Deporte/{$deportista->deporte}">{$deportista->deporte}</a> Deportista: <a href="Deportistas/{$deportista->id_deportista}">{$deportista->nombre}</a>,{$deportista->apellido}</li><a href="deleteTask/{$deportista->id_deportista}">borrar</a>
             {/foreach}
             <ul>
-            {include file="./form.tpl" }
+
+            /*
+                Si el usuario tiene el rol 1, se le muestra el formulario para el crud.
+                Si tiene rol 0 si 
+            */
     
        </body>
         </html>

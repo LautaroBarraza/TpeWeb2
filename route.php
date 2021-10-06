@@ -3,6 +3,9 @@ include_once './Controller/TaskController.php';
 include_once './Model/TaskModel.php';
 include_once './View/TaskView.php';
 require_once('./smarty-master/libs/Smarty.class.php');
+require_once './Controller/usuarioController.php';
+require_once './Model/usuarioModel.php';
+require_once './View/usuarioView.php';
 
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
@@ -13,11 +16,12 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
 $params = explode("/", $action);
 
 $controller = new TaskController();
+$sessionController = new usuarioController();
 
 switch($params[0]){
 
     case 'home':
-        $controller->showHome();
+        $sessionController->showInit();
     break;
     case 'Deportistas':
         $controller->showDeportista($params[1]);
@@ -25,6 +29,14 @@ switch($params[0]){
     case 'Deporte' :
         $controller->showDeporte($params[1]);
         break;
+    case 'login' :
+        $sessionController->confirmLogin();
+        break;
+    case 'register' :
+        $sessionController->confirmRegister();
+        break;
+    
+
     /*case 'insert':
         $controller->createTask();
     break;

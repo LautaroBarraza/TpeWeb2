@@ -1,5 +1,5 @@
 
     <div>
-        <button><a href="login"></a> Tengo una cuenta</button>
-        <button><a href="formRegister"></a>Crear una cuenta</button>
+        <button><a href="login">Tengo una cuenta</a> </button>
+        <button><a href="register">Crear una cuenta</a></button>
     </div>

@@ -11,7 +11,7 @@ class TaskController{
 
     function showHome(){
         $deportistas= $this->model->getDeportistasConDeporte();
-        $this->view->showTasks($deportistas);
+        $this->view->showDeportistas($deportistas);
     }
 
     function showDeportista($deportista){
