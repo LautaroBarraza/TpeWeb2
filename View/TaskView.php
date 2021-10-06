@@ -6,7 +6,7 @@ function __construct(){
 
 }
 
-function showTasks($deportistas){
+function showDeportistas($deportistas){
  
     $arrayDeportista = array();
     foreach($deportistas as $deportista){
