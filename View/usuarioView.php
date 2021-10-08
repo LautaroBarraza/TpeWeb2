@@ -12,11 +12,13 @@ class usuarioView{
     }
 
     function showLogin(){
-        echo "aca me logearia";
+        $smarty = new Smarty();
+        $smarty->display('templates/formLogin.tpl');
     }
 
     function showRegister(){
-        echo 'aca me registraria';
+        $smarty = new Smarty();
+        $smarty->display('templates/formRegister.tpl');
     }
 
 
