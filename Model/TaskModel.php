@@ -47,9 +47,9 @@ class TaskModel{
 
 
 
-    /*function insertTask($titulo, $descripcion, $prioridad, $completada){
+    /*function inserUsuario($nombreUsuario, $contrasenia){
     
-        $tarea = $this->db->prepare("INSERT INTO db_task(titulo, descripcion, prioridad, completada) VALUES(?,?,?,?)");
+        $usuario = $this->db->prepare("INSERT INTO usuario(titulo, descripcion, prioridad, completada) VALUES(?,?,?,?)");
             $tarea->execute(array($titulo,$descripcion,$prioridad,$completada));
     
     

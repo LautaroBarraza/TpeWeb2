@@ -11,7 +11,7 @@ class usuarioController{
     }
 
 
-    function confirmLogin(){
+    function showLogin(){
         $this->view->showLogin();
     }
 
@@ -19,7 +19,15 @@ class usuarioController{
         $this->view->showInicio();
     }
 
-    function confirmRegister(){
+    function showRegister(){
         $this->view->showRegister();
+    }
+
+    function confirmLogin(){
+        //aca seria verificar si el usuario coincide con el de la base de datos y iniciar la session y mandarlo a la pagina principal
+    }
+
+    function confirmRegister(){
+        //aca seria insertar el usuario a la tabla y mandarlo al login
     }
 }

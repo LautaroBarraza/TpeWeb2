@@ -27,19 +27,14 @@ class TaskController{
     
     
     
-    /*function createTask(){
-        if (isset($_POST['completada'])){
-            $completada=1;
-        }else{
-            $completada=0;
-        };
-        $this->model->insertTask($_POST['titulo'], $_POST['descripcion'], $_POST['prioridad'], $completada);
+    /*function createUsuario(){
+        $this->model->insertUsuario($_POST['nombreUsuario'], $_POST['contrasenia']);
         header("Location: ".BASE_URL."home");
     
     
     }
-    function borrarTarea($id_task){
-        $this->model->deleteTask($id_task);
+    function borrarUsuario($id_usuario){
+        $this->model->deleteUsuario($id_usuario);
         header("Location: ".BASE_URL."home");
     
     }

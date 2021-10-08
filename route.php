@@ -30,9 +30,15 @@ switch($params[0]){
         $controller->showDeporte($params[1]);
         break;
     case 'login' :
-        $sessionController->confirmLogin();
+        $sessionController->showLogin();
         break;
     case 'register' :
+        $sessionController->showRegister();
+        break;
+    case 'confirmLogin' :
+        $sessionController->confirmLogin();
+        break;
+    case 'confirmRegister' :
         $sessionController->confirmRegister();
         break;
     
