@@ -12,5 +12,18 @@ class usuarioModel{
 
     }
 
+    function insertUsuario($userName, $userPassword){
+        $query = $this->db->prepare('INSERT INTO usuarios (nombreUsuario, contrasenia) VALUES (? , ?)');
+       $query->execute([$userName,$userPassword]);
+    }
+
+    function getUser($nombreUsuario){
+        $query = $this->db->prepare('SELECT * FROM usuarios WHERE nombreUsuario=?');
+        $query->execute([$nombreUsuario]);
+        $user = $query->fetch(PDO::FETCH_OBJ);
+        return $user;
+
+    }
+
 
 }

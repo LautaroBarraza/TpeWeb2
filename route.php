@@ -10,7 +10,7 @@ require_once './View/usuarioView.php';
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }else{
-    $action ='home';
+    $action ='inicio';
 };
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 $params = explode("/", $action);
@@ -21,6 +21,9 @@ $sessionController = new usuarioController();
 switch($params[0]){
 
     case 'home':
+        $controller->showHome();
+    break;
+    case 'inicio':
         $sessionController->showInit();
     break;
     case 'Deportistas':
