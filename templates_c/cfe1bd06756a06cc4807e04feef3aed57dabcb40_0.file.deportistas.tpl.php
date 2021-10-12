@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-06 23:53:49
+/* Smarty version 3.1.39, created on 2021-10-12 08:05:27
   from 'C:\xampp\htdocs\web2\TpeWeb2\templates\deportistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615e1aed6edab4_25234890',
+  'unifunc' => 'content_616525a7be20f4_76001588',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cfe1bd06756a06cc4807e04feef3aed57dabcb40' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TpeWeb2\\templates\\deportistas.tpl',
-      1 => 1633557227,
+      1 => 1634018721,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615e1aed6edab4_25234890 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616525a7be20f4_76001588 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html lang="en">
         <head>
@@ -33,6 +33,8 @@ function content_615e1aed6edab4_25234890 (Smarty_Internal_Template $_smarty_tpl)
         <body>
             <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h1>
+
+            <a href="logOut">Log Out</a>
 
             <ul>
             <?php
@@ -53,10 +55,13 @@ $_smarty_tpl->tpl_vars['deportista']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <ul>
 
-            /*
-                Si el usuario tiene el rol 1, se le muestra el formulario para el crud.
-                Si tiene rol 0 si 
-            */
+                <?php if ($_smarty_tpl->tpl_vars['rango']->value) {?>
+                <form action="" method="post">
+                    <input type="text" name="deportista">
+                    <input type="text" name="deporte">
+                    <input type="text" name="nombre">
+                </form>
+                <?php }?>
     
        </body>
         </html><?php }

@@ -7,3 +7,6 @@
     <input type="password" name="verifypassword" placeholder="Vuelva a escribir su contraseña" />
     <button type="submit">Registrar usuario</button>
 </form>
+{if $error !=''}
+<h1>{$error}</h1>
+{/if}

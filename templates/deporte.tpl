@@ -8,6 +8,7 @@
             <title>Document</title>
         </head>
         <body>
+        <a href="logOut">Log Out</a>
             <h1>{$titulo}</h1>
 
             <ul>

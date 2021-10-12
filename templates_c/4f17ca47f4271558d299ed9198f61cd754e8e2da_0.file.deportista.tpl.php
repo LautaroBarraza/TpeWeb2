@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-03 18:23:32
+/* Smarty version 3.1.39, created on 2021-10-12 08:39:54
   from 'C:\xampp\htdocs\web2\TpeWeb2\templates\deportista.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6159d904cda3d8_96743793',
+  'unifunc' => 'content_61652dba4e3ca8_06163931',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4f17ca47f4271558d299ed9198f61cd754e8e2da' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TpeWeb2\\templates\\deportista.tpl',
-      1 => 1632412598,
+      1 => 1634018847,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6159d904cda3d8_96743793 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61652dba4e3ca8_06163931 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html lang="en">
         <head>
@@ -31,6 +31,7 @@ function content_6159d904cda3d8_96743793 (Smarty_Internal_Template $_smarty_tpl)
             <title>Document</title>
         </head>
         <body>
+        <a href="logOut">Log Out</a>
             <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h1>
 

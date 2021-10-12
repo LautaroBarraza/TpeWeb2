@@ -5,3 +5,7 @@
     <input type="password" name="password" placeholder="Escriba aqui su contraseña" />
     <button type="submit">Iniciar sesion</button>
 </form>    
+
+{if $error != ''}
+ <h1>{$error}</h1>
+{/if}

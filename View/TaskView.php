@@ -6,7 +6,7 @@ function __construct(){
 
 }
 
-function showDeportistas($deportistas){
+function showDeportistas($deportistas, $esAdmin){
  
     $arrayDeportista = array();
     foreach($deportistas as $deportista){
@@ -15,6 +15,7 @@ function showDeportistas($deportistas){
     $smarty = new Smarty();
     $smarty->assign('titulo', "deportista");
     $smarty->assign('deportistas', $arrayDeportista);
+    $smarty->assign('rango', $esAdmin);
     $smarty->display('templates/deportistas.tpl');
 
     

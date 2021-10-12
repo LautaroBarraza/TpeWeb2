@@ -2,16 +2,19 @@
 
 $model;
 $view;
+$authHelper;
 class TaskController{
     function __construct(){
         $this->model= new TaskModel();
         $this->view = new TaskView();
+        $this->authHelper = new AuthHelper();
     }
 
 
     function showHome(){
         $deportistas= $this->model->getDeportistasConDeporte();
-        $this->view->showDeportistas($deportistas);
+        $esAdmin= $this->authHelper->checkLogin();
+        $this->view->showDeportistas($deportistas, $esAdmin);
     }
 
     function showDeportista($deportista){

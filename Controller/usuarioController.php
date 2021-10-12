@@ -33,9 +33,15 @@ class usuarioController{
         $user= $this->model->getUser($userName);
         if($user && password_verify($userPassword,($user->contrasenia))){
             //aca mostraria el home
+            session_start();
+            $_SESSION['username']=$userName;
             header("Location: ".BASE_URL."home");
-        }//aca tendria que poner bien si no se puede loguear
-    }
+
+        }else{
+            //aca tendria que poner bien si no se puede loguear
+            $this->view->showLogin("Contrasenia y/o nombre de usuario incorrecto");
+        }
+        }
 
     function confirmRegister(){
         //aca seria insertar el usuario a la tabla y mandarlo al login
@@ -43,6 +49,7 @@ class usuarioController{
             $userName=$_POST['username'];
             $userPassword=password_hash($_POST['password'], PASSWORD_BCRYPT);
             $verifyUserPassword=password_hash($_POST['verifypassword'], PASSWORD_BCRYPT);
+            //$userAdmin=1;
 
             $usuarioRepetido= $this->model->getUser($userName);
             if (password_verify($userPassword, $verifyUserPassword)){
@@ -50,16 +57,17 @@ class usuarioController{
                     $this->model->insertUsuario($userName, $userPassword);
                     header("Location: ".BASE_URL."login");
                 }else{
-                    echo "nombre de usuario ya utilizado";
-                    //aca tendria que poner de mejor manera esto
+                    $this->view->showRegister("nombre de usuario no disponible");
                 }
         }else{
-            echo "las contrasenias no coinciden";
-            //aca tendria que poner bien que las contrasenias no coinciden
-        }
             
-        //aca tendria que llevarlo a login
-
+            $this->view->showRegister('Las contrasenias no coinciden');
+        }
+        }
     }
-}
+    function logOut(){
+        session_start();
+        session_destroy();
+        header("Location: ".BASE_URL."inicio");
+    }
 }

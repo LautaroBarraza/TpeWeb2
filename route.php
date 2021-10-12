@@ -6,13 +6,16 @@ require_once('./smarty-master/libs/Smarty.class.php');
 require_once './Controller/usuarioController.php';
 require_once './Model/usuarioModel.php';
 require_once './View/usuarioView.php';
+require_once './helpers/AuthHelper.php';
+
+define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }else{
     $action ='inicio';
-};
-define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
+}
+
 $params = explode("/", $action);
 
 $controller = new TaskController();
@@ -43,6 +46,9 @@ switch($params[0]){
         break;
     case 'confirmRegister' :
         $sessionController->confirmRegister();
+        break;
+    case 'logOut' :
+        $sessionController->logOut();
         break;
     
 
