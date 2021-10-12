@@ -32,15 +32,16 @@
             <ul>
 
                 {if $rango}
-                <form action="" method="post">
-                    <input type="text" name="nombre">
-                    <input type="text" name="apellido">
-                    <input type="text" name="edad">
+                <form action="insertDeportista" method="post">
+                    <input type="text" name="nombre" placeholder="nombre">
+                    <input type="text" name="apellido" placeholder="apellido">
+                    <input type="number" name="edad" placeholder="edad">
                     <select name="deporte" id="">
                         {foreach from=$deportes item=$deporte}
                         <option value='{$deporte->id_deporte}'>{$deporte->deporte}</option>
                         {/foreach}
                     </select>
+                    <button type="submit">Agregar Deportista</button>
                 </form>
                 {/if}
     

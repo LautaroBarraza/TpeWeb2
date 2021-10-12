@@ -34,17 +34,12 @@ class TaskController{
         $deporte = $this->model->getDeporte($deporte);
         $this->view->showUnDeporte($deporte);
     }
-    
-    
-    
-    
-    /*function createUsuario(){
-        $this->model->insertUsuario($_POST['nombreUsuario'], $_POST['contrasenia']);
+    function createDeportista(){
+        $this->model->insertDeportista($_POST['nombre'], $_POST['apellido'], $_POST['edad'], $_POST['deporte']);
         header("Location: ".BASE_URL."home");
     
     
     }
-    */
     function borrarDeportista($id_Deportista){
         $this->model->deleteDeportista($id_Deportista);
         $this->showHome();

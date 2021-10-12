@@ -50,16 +50,12 @@ class TaskModel{
     
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
-
-
-
-
-    /*function inserUsuario($nombreUsuario, $contrasenia){
+    function insertDeportista($nombre, $apellido, $edad, $id_deporte){
     
-        $usuario = $this->db->prepare("INSERT INTO usuarios(nombreUsuario, contrasenia) VALUES(?,?)");
-            $usuario->execute(array($nombreUsuario,$contrasenia));
+        $sentencia = $this->db->prepare("INSERT INTO deportistas(nombre, apellido, edad, id_deporte) VALUES(?,?,?,?)");
+            $sentencia->execute(array($nombre,$apellido, $edad, $id_deporte));
     }
-    */
+    
     function deleteDeportista($id_deportista){
         $sentencia = $this->db->prepare( 
             "delete from deportistas where id_deportista=?");

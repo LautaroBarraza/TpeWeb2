@@ -50,12 +50,9 @@ switch($params[0]){
     case 'logOut' :
         $sessionController->logOut();
         break;
-    
-
-    /*case 'insert':
-        $controller->createTask();
+    case 'insertDeportista':
+        $controller->createDeportista();
     break;
-    */
     case 'deleteDeportista':
         $controller->borrarDeportista($params[1]);
     break;
