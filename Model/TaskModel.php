@@ -36,6 +36,13 @@ class TaskModel{
         return $deporte;
     }
 
+    function getDeportes(){
+        $sentencia = $this->db->prepare( "select * from deporte");
+        $sentencia->execute();
+        $deporte= $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $deporte;
+    }
+
     function getDeportistasConDeporte() {
         $query = $this->db->prepare(
             "SELECT deportistas.*, deporte.deporte as deporte FROM deportistas JOIN deporte ON deportistas.id_deporte = deporte.id_deporte");
@@ -49,21 +56,17 @@ class TaskModel{
 
     /*function inserUsuario($nombreUsuario, $contrasenia){
     
-        $usuario = $this->db->prepare("INSERT INTO usuario(titulo, descripcion, prioridad, completada) VALUES(?,?,?,?)");
-            $tarea->execute(array($titulo,$descripcion,$prioridad,$completada));
-    
-    
-    
+        $usuario = $this->db->prepare("INSERT INTO usuarios(nombreUsuario, contrasenia) VALUES(?,?)");
+            $usuario->execute(array($nombreUsuario,$contrasenia));
     }
-    function deleteTask($id_tarea){
-        $tarea = $this->db->prepare( 
-            "delete from deportistas where id_task=?");
-            
-            
-            $tarea->execute(array($id_tarea));
-    }
-
     */
+    function deleteDeportista($id_deportista){
+        $sentencia = $this->db->prepare( 
+            "delete from deportistas where id_deportista=?");
+            
+            
+            $sentencia->execute(array($id_deportista));
+    }
 
 
 }

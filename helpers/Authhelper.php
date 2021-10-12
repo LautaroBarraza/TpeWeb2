@@ -21,4 +21,8 @@ class AuthHelper{
 
     }
 
+    function getUserName(){
+        return $_SESSION['username'];
+    }
+
 }

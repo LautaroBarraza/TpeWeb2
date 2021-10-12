@@ -55,10 +55,11 @@ switch($params[0]){
     /*case 'insert':
         $controller->createTask();
     break;
-    case 'deleteTask':
-        $controller->borrarTarea($params[1]);
-    break;
     */
+    case 'deleteDeportista':
+        $controller->borrarDeportista($params[1]);
+    break;
+    
     default:
     echo "mal";
     break;

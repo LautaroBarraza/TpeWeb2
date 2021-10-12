@@ -12,9 +12,17 @@ class TaskController{
 
 
     function showHome(){
+        
         $deportistas= $this->model->getDeportistasConDeporte();
+        $deportes = $this->model->getDeportes();
         $esAdmin= $this->authHelper->checkLogin();
-        $this->view->showDeportistas($deportistas, $esAdmin);
+        
+        //si se logueo lo saludo y sino le muestro para que se logue
+        $userName=null;
+        if($esAdmin){
+           $userName= $this->authHelper->getUserName();
+        }
+        $this->view->showDeportistas($deportistas, $esAdmin, $deportes, $userName);
     }
 
     function showDeportista($deportista){
@@ -36,11 +44,10 @@ class TaskController{
     
     
     }
-    function borrarUsuario($id_usuario){
-        $this->model->deleteUsuario($id_usuario);
-        header("Location: ".BASE_URL."home");
-    
+    */
+    function borrarDeportista($id_Deportista){
+        $this->model->deleteDeportista($id_Deportista);
+        $this->showHome();
     }
-*/
 
 }
