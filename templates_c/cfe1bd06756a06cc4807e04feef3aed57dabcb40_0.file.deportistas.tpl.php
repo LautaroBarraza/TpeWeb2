@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-12 20:14:07
+/* Smarty version 3.1.39, created on 2021-10-13 00:43:26
   from 'C:\xampp\htdocs\web2\TpeWeb2\templates\deportistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6165d06fe90111_33095281',
+  'unifunc' => 'content_61660f8e3d0b97_83028170',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cfe1bd06756a06cc4807e04feef3aed57dabcb40' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TpeWeb2\\templates\\deportistas.tpl',
-      1 => 1634062443,
+      1 => 1634078601,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6165d06fe90111_33095281 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61660f8e3d0b97_83028170 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html lang="en">
         <head>
@@ -79,26 +79,53 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <ul>
 
                 <?php if ($_smarty_tpl->tpl_vars['rango']->value) {?>
-                <form action="insertDeportista" method="post">
-                    <input type="text" name="nombre" placeholder="nombre">
-                    <input type="text" name="apellido" placeholder="apellido">
-                    <input type="number" name="edad" placeholder="edad">
-                    <select name="deporte" id="">
-                        <?php
+                <div>
+                    <form action="insertDeportista" method="post">
+                        <input type="text" name="nombre" placeholder="nombre">
+                        <input type="text" name="apellido" placeholder="apellido">
+                        <input type="number" name="edad" placeholder="edad">
+                        <select name="deporte" id="">
+                            <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['deportes']->value, 'deporte');
 $_smarty_tpl->tpl_vars['deporte']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['deporte']->value) {
 $_smarty_tpl->tpl_vars['deporte']->do_else = false;
 ?>
-                        <option value='<?php echo $_smarty_tpl->tpl_vars['deporte']->value->id_deporte;?>
+                            <option value='<?php echo $_smarty_tpl->tpl_vars['deporte']->value->id_deporte;?>
 '><?php echo $_smarty_tpl->tpl_vars['deporte']->value->deporte;?>
 </option>
-                        <?php
+                            <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                    </select>
-                    <button type="submit">Agregar Deportista</button>
-                </form>
+                        </select>
+                        <button type="submit">Agregar Deportista</button>
+                    </form>
+                </div>
+                <div>
+                    <form action="insertDeporte" method="post">
+                        <input type="text" name="deporte">
+                        <button type="submit">Agregar Deporte</button>
+                    </form>
+                </div>
+                <div>
+                    <form action="deleteDeporte" method="post">
+                        <select name="deporte" id="">
+                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['deportes']->value, 'deporte');
+$_smarty_tpl->tpl_vars['deporte']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['deporte']->value) {
+$_smarty_tpl->tpl_vars['deporte']->do_else = false;
+?>
+                            <option value='<?php echo $_smarty_tpl->tpl_vars['deporte']->value->id_deporte;?>
+'><?php echo $_smarty_tpl->tpl_vars['deporte']->value->deporte;?>
+</option>
+                            <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                        </select>
+                        <button type="submit">borrar Deporte</button>
+                    </form>
+                </div>
                 <?php }?>
     
        </body>

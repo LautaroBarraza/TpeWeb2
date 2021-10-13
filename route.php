@@ -53,9 +53,15 @@ switch($params[0]){
     case 'insertDeportista':
         $controller->createDeportista();
     break;
+    case 'insertDeporte':
+        $controller->createDeporte();
+    break;
     case 'deleteDeportista':
         $controller->borrarDeportista($params[1]);
-    break;
+        break;
+    case 'deleteDeporte':
+        $controller->borrarDeporte();
+        break;
     
     default:
     echo "mal";

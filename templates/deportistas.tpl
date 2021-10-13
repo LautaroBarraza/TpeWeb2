@@ -32,17 +32,35 @@
             <ul>
 
                 {if $rango}
-                <form action="insertDeportista" method="post">
-                    <input type="text" name="nombre" placeholder="nombre">
-                    <input type="text" name="apellido" placeholder="apellido">
-                    <input type="number" name="edad" placeholder="edad">
-                    <select name="deporte" id="">
-                        {foreach from=$deportes item=$deporte}
-                        <option value='{$deporte->id_deporte}'>{$deporte->deporte}</option>
-                        {/foreach}
-                    </select>
-                    <button type="submit">Agregar Deportista</button>
-                </form>
+                <div>
+                    <form action="insertDeportista" method="post">
+                        <input type="text" name="nombre" placeholder="nombre">
+                        <input type="text" name="apellido" placeholder="apellido">
+                        <input type="number" name="edad" placeholder="edad">
+                        <select name="deporte" id="">
+                            {foreach from=$deportes item=$deporte}
+                            <option value='{$deporte->id_deporte}'>{$deporte->deporte}</option>
+                            {/foreach}
+                        </select>
+                        <button type="submit">Agregar Deportista</button>
+                    </form>
+                </div>
+                <div>
+                    <form action="insertDeporte" method="post">
+                        <input type="text" name="deporte">
+                        <button type="submit">Agregar Deporte</button>
+                    </form>
+                </div>
+                <div>
+                    <form action="deleteDeporte" method="post">
+                        <select name="deporte" id="">
+                            {foreach from=$deportes item=$deporte}
+                            <option value='{$deporte->id_deporte}'>{$deporte->deporte}</option>
+                            {/foreach}
+                        </select>
+                        <button type="submit">borrar Deporte</button>
+                    </form>
+                </div>
                 {/if}
     
        </body>
