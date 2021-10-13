@@ -6,14 +6,14 @@ require_once('./smarty-master/libs/Smarty.class.php');
 require_once './Controller/usuarioController.php';
 require_once './Model/usuarioModel.php';
 require_once './View/usuarioView.php';
-require_once './helpers/AuthHelper.php';
+require_once './helpers/Authhelper.php';
 
-define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
+define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
-}else{
-    $action ='inicio';
+} else {
+    $action = 'inicio';
 }
 
 $params = explode("/", $action);
@@ -21,33 +21,33 @@ $params = explode("/", $action);
 $controller = new TaskController();
 $sessionController = new usuarioController();
 
-switch($params[0]){
+switch ($params[0]) {
 
     case 'home':
         $controller->showHome();
-    break;
+        break;
     case 'inicio':
         $sessionController->showInit();
-    break;
+        break;
     case 'Deportistas':
         $controller->showDeportista($params[1]);
         break;
-    case 'Deporte' :
+    case 'Deporte':
         $controller->showDeporte($params[1]);
         break;
-    case 'login' :
+    case 'login':
         $sessionController->showLogin();
         break;
-    case 'register' :
+    case 'register':
         $sessionController->showRegister();
         break;
-    case 'confirmLogin' :
+    case 'confirmLogin':
         $sessionController->confirmLogin();
         break;
-    case 'confirmRegister' :
+    case 'confirmRegister':
         $sessionController->confirmRegister();
         break;
-    case 'logOut' :
+    case 'logOut':
         $sessionController->logOut();
         break;
     case 'insertDeportista':
@@ -67,4 +67,7 @@ switch($params[0]){
     echo "mal";
     break;
 
+    default:
+        echo "mal";
+        break;
 }
