@@ -2,7 +2,7 @@
 include_once './Controller/TaskController.php';
 include_once './Model/TaskModel.php';
 include_once './View/TaskView.php';
-require_once('./smarty-master/libs/Smarty.class.php');
+require_once './smarty-master/libs/Smarty.class.php';
 require_once './Controller/usuarioController.php';
 require_once './Model/usuarioModel.php';
 require_once './View/usuarioView.php';
@@ -52,20 +52,16 @@ switch ($params[0]) {
         break;
     case 'insertDeportista':
         $controller->createDeportista();
-    break;
+        break;
     case 'insertDeporte':
         $controller->createDeporte();
-    break;
+        break;
     case 'deleteDeportista':
         $controller->borrarDeportista($params[1]);
         break;
     case 'deleteDeporte':
         $controller->borrarDeporte();
         break;
-    
-    default:
-    echo "mal";
-    break;
 
     default:
         echo "mal";

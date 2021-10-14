@@ -1,13 +1,15 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+{include file="head.tpl"}
+<div style="--bs-bg-opacity: .5;" class="bg-secondary min-vh-100 justify-content-center gap-3 d-flex">
 
-<h1>Login</h1>
-
-<form action="confirmLogin" method="POST">
-    <input type="text" name="username" placeholder="Escriba aqui su nombre de usuario" />
-    <input type="password" name="password" placeholder="Escriba aqui su contraseña" />
-    <button type="submit">Iniciar sesion</button>
+<form action="confirmLogin" method="POST" class="d-flex flex-column align-items-center justify-items-center h-75 gap-3 rounded-3 p-4 mt-4 w-50 bg-white">
+    
+    <h1>Login</h1>
+    <input type="text" name="username" placeholder="Nombre de usuario..." />
+    <input type="password" name="password" placeholder="Contraseña..." />
+    <button class="text-light w-50 p-2 border-0 rounded-1 bg-primary" type="submit">Iniciar sesion</button>
 </form>    
 
+</div>
 {if $error != ''}
  <h1>{$error}</h1>
 {/if}

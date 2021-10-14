@@ -50,15 +50,15 @@ class usuarioController
     function confirmRegister()
     {
         //aca seria insertar el usuario a la tabla y mandarlo al login
-        if(!empty($_POST['username'])&& !empty($_POST['password'])&& !empty($_POST['verifypassword'])){
-            $userName=$_POST['username'];
-            $userPassword=password_hash($_POST['password'], PASSWORD_BCRYPT);
-            $verifyUserPassword=$_POST['verifypassword'];
+        if (!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['verifypassword'])) {
+            $userName = $_POST['username'];
+            $userPassword = password_hash($_POST['password'], PASSWORD_BCRYPT);
+            $verifyUserPassword = $_POST['verifypassword'];
             //$userAdmin=1;
 
-            $usuarioRepetido= $this->model->getUser($userName);
-            if (password_verify($verifyUserPassword,$userPassword)){
-                if(empty($usuarioRepetido)){
+            $usuarioRepetido = $this->model->getUser($userName);
+            if (password_verify($verifyUserPassword, $userPassword)) {
+                if (empty($usuarioRepetido)) {
                     $this->model->insertUsuario($userName, $userPassword);
                     header("Location: " . BASE_URL . "login");
                 } else {

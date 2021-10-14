@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-        <html lang="en">
-        <head>
+{include file="head.tpl"}
 
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <body>
+        <div class="d-flex flex-column align-items-center justify-items-center h-75 gap-3 rounded-3 p-4 mt-4 w-50 bg-white">
+            <a href="logOut">Log Out</a>
 
-        </head>
-        <body>
-        <a href="logOut">Log Out</a>
             <h1>{$titulo}</h1>
 
             <ul>
@@ -18,6 +11,5 @@
             <li>{$deportista->edad}</li>
             <li>{$deportista->deporte}</li>
             <ul>
-    
-       </body>
-        </html>
+        </div>
+    </body>

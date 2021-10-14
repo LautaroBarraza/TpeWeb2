@@ -1,24 +1,21 @@
-<!DOCTYPE html>
-        <html lang="en">
-        <head>
 
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+{include file="head.tpl"}
 
-        </head>
         <body>
-        <a href="logOut">Log Out</a>
-            <h1>{$titulo}</h1>
+            <div style="--bs-bg-opacity: .5;" class="bg-secondary min-vh-100 justify-content-center gap-3 d-flex ">
+                <div class="d-flex flex-column align-items-center justify-items-center h-75 gap-3 rounded-3 p-4 mt-4 w-50 bg-white">
+                    
+                    <a class="p-2 rounded-3 border border-2 border-danger text-danger fw-bold text-center text-capitalize text-decoration-none" href="logOut">Log Out</a>
+                    
+                        <h1 class="text-capitalize">{$titulo}</h1>
 
-            <ul>
-            {foreach from=$deportistas item=$deportista}
-            <li>{$deportista->nombre},{$deportista->apellido}</li>
-            <li>{$deportista->edad}</li>
-            {/foreach}
-            <ul>
-    
-       </body>
-        </html>
+                        <ul class="list-group">
+                            {foreach from=$deportistas item=$deportista}
+                                <li class="list-group-item text-capitalize">{$deportista->nombre} {$deportista->apellido}</li>
+                                <li class="list-group-item">{$deportista->edad} años</li>
+                            {/foreach}
+                        <ul>
+                </div>
+            </div>
+        </body>
+    </html>
