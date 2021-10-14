@@ -1,6 +1,6 @@
 <?php
 
-class TaskView{
+class DeportistasView{
 
 function __construct(){
 

@@ -1,7 +1,7 @@
 <?php
 
 
-class TaskModel{
+class DeportistasModel{
 
     private $db;
 

@@ -3,10 +3,10 @@
 $model;
 $view;
 $authHelper;
-class TaskController{
+class DeportistasController{
     function __construct(){
-        $this->model= new TaskModel();
-        $this->view = new TaskView();
+        $this->model= new DeportistasModel();
+        $this->view = new DeportistasView();
         $this->authHelper = new AuthHelper();
     }
 
