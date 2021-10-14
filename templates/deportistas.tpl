@@ -35,7 +35,12 @@
                         Deportista:
                             <a class="fw-bold text-capitalize text-decoration-none" href="Deportistas/{$deportista->id_deportista}">{$deportista->nombre} {$deportista->apellido}</a>
 
+                    {if $rango}
+
                         <a style="--bs-bg-opacity: .4;" class="rounded list-group-item bg-danger border-0 text-decoration-none text-black text-capitalize" href="deleteDeportista/{$deportista->id_deportista}">borrar ↑</a>
+
+                    {/if}
+
                     </li>
 
                 
@@ -74,17 +79,47 @@
                         <button class="text-light p-2 border-0 rounded-1 bg-primary" type="submit">Agregar Deporte</button>
                     </form>
                 </div>
-
+               
+                <div>
+                    <form action="updateDeportista" method="post">
+                        <select name="deportistaEdit" id="">
+                            {foreach from=$deportistas item=$deportista}
+                                <option value='{$deportista->id_deportista}'>{$deportista->apellido}</option>
+                            {/foreach}
+                        </select>
+                        <input type="text" name="nombreEdit" id="" placeholder="actualice nombre de deportista">
+                        <input type="text" name="apellidoEdit" placeholder="apellido">
+                        <input type="number" name="edadEdit" placeholder="edad">
+                        <select name="deporteEdit" id="">
+                            {foreach from=$deportes item=$deporte}
+                            <option value='{$deporte->id_deporte}'>{$deporte->deporte}</option>
+                            {/foreach}
+                        </select>
+                        <button type="submit">actualizar deportista</button>
+                    </form>
+                </div>
+               
                 <div>
                     <form action="deleteDeporte" method="post" class="mb-4 p-3 border border-1 rounded-3 justify-content-center gap-3 d-flex flex-column">
 
                         <h4 class="text-center pb-1 border-bottom">Eliminar Deporte</h4>
                         <select name="deporte" id="">
                             {foreach from=$deportes item=$deporte}
-                            <option value='{$deporte->id_deporte}'>{$deporte->deporte}</option>
+                                <option value='{$deporte->id_deporte}'>{$deporte->deporte}</option>
                             {/foreach}
                         </select>
                         <button class="text-light p-2 border-0 rounded-1 bg-primary" type="submit">Borrar Deporte</button>
+                    </form>
+                </div>
+                <div>
+                    <form action="updateDeporte" method="post">
+                        <select name="deporte" id="">
+                            {foreach from=$deportes item=$deporte}
+                                <option value='{$deporte->id_deporte}'>{$deporte->deporte}</option>
+                            {/foreach}
+                        </select>
+                        <input type="text" name="deporteEditado" id="" placeholder="actualice nombre de deporte">
+                        <button type="submit">actualizar Deporte</button>
                     </form>
                 </div>
                 {/if}

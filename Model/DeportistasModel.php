@@ -1,7 +1,7 @@
 <?php
 
 
-class TaskModel
+class DeportistasModel
 {
 
     private $db;
@@ -83,5 +83,17 @@ class TaskModel
             "delete from deporte where id_deporte=?"
         );
         $sentencia->execute(array($id_deporte));
+    }
+
+    function updateDeporte($deporte, $deporteEditado)
+    {
+        $sentencia = $this->db->prepare("update deporte set deporte='$deporteEditado' where deporte.id_deporte=?");
+        $sentencia->execute(array($deporte));
+    }
+
+    function updateDeportista($id_deportista, $nombre, $apellido, $edad, $id_deporte)
+    {
+        $sentencia = $this->db->prepare("update deportistas set nombre='$nombre', apellido='$apellido',edad='$edad',id_deporte='$id_deporte' where deportistas.id_deportista=?");
+        $sentencia->execute(array($id_deportista));
     }
 }
