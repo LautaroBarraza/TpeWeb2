@@ -62,12 +62,13 @@ switch ($params[0]) {
     case 'deleteDeporte':
         $controller->borrarDeporte();
         break;
-    
+    case 'updateDeporte':
+        $controller->editarDeporte();
+        break;
+    case 'updateDeportista':
+        $controller->editarDeportista();
+        break;
     default:
     echo "mal";
     break;
-
-    default:
-        echo "mal";
-        break;
 }

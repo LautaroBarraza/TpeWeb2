@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-12 07:15:01
+/* Smarty version 3.1.39, created on 2021-10-13 03:19:03
   from 'C:\xampp\htdocs\web2\TpeWeb2\templates\formBienvenido.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616519d50939b6_25013572',
+  'unifunc' => 'content_61663407933740_38876040',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '670dac73a7cf76b5538de2f0d8e7d81fd2d9d28d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TpeWeb2\\templates\\formBienvenido.tpl',
-      1 => 1634015681,
+      1 => 1634087359,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_616519d50939b6_25013572 (Smarty_Internal_Template $_smarty_tpl) {
-?>
-    <div>
-        <button><a href="login">Tengo una cuenta</a> </button>
-        <button><a href="register">Crear una cuenta</a></button>
-        <button><a href="home">Invitado</a></button>
+function content_61663407933740_38876040 (Smarty_Internal_Template $_smarty_tpl) {
+?>    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <div class="min-vh-100 justify-content-center gap-3 d-flex flex-column flex-col ">
+        <div style="--bs-bg-opacity: .2;" " class= "vh-100 bg-secondary  justify-content-center gap-3 d-flex flex-column flex-col pt-4">
+            <h1 class="text-center">TPE Web 2 - Deportistas</h1>
+            <button class="p-2 border-0 rounded-1 bg-primary"><a class="text-light text-decoration-none" href="login">Tengo una cuenta</a> </button>
+            <button class="p-2 bg-primary border-0 rounded-1"><a class="text-light text-decoration-none" href="register">Crear una cuenta</a></button>
+            <button class="p-2 border-0 rounded-1 bg-primary"><a class="text-light text-decoration-none" href="home">Invitado</a></button>
+        </div>
     </div><?php }
 }

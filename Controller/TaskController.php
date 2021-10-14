@@ -47,12 +47,21 @@ class TaskController{
 
     function borrarDeportista($id_Deportista){
         $this->model->deleteDeportista($id_Deportista);
-        $this->showHome();
+        header("Location: ".BASE_URL."home");
     }
 
     function borrarDeporte(){
         $this->model->deleteDeporte($_POST['deporte']);
-        $this->showHome();
+        header("Location: ".BASE_URL."home");
+    }
+    function editarDeporte(){
+        $this->model->updateDeporte($_POST['deporte'],$_POST['deporteEditado']);
+        header("Location: ".BASE_URL."home");
+    }
+
+    function editarDeportista(){
+        $this->model->updateDeportista($_POST['deportistaEdit'],$_POST['nombreEdit'],$_POST['apellidoEdit'],$_POST['edadEdit'],$_POST['deporteEdit']);
+        header("Location: ".BASE_URL."home");
     }
 
 }
