@@ -1,5 +1,5 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-24 01:45:54
+/* Smarty version 3.1.39, created on 2021-11-24 19:58:57
   from 'C:\xampp\htdocs\web2\TpeWeb2\templates\error.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
