@@ -25,13 +25,14 @@ class DeportistasView
     }
 
 
-    function showUnDeportista($deportista, $estalogeado, $rol)
+    function showUnDeportista($deportista, $estalogeado, $rol,$nombreUsuario)
     {
         $smarty = new Smarty();
         $smarty->assign('titulo', $deportista->nombre);
         $smarty->assign('deportista', $deportista);
         $smarty->assign('logeado', $estalogeado);
         $smarty->assign('rol', $rol);
+        $smarty->assign('nombreUsuario', $nombreUsuario);
         $smarty->display('templates/deportista.tpl');
     }
 

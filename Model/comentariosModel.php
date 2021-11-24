@@ -31,10 +31,10 @@ class comentariosModel
         return $comentario;
     }
 
-    function insertComentario($comentario,$nota, $deportista)
+    function insertComentario($comentario,$nota, $deportista,$nombreUsuario)
     {
-        $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario,nota, id_deportista) VALUES(?,?,?)");
-        $sentencia->execute(array($comentario,$nota, $deportista));
+        $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario,nota, id_deportista,nombreUsuario) VALUES(?,?,?,?)");
+        $sentencia->execute(array($comentario,$nota, $deportista,$nombreUsuario));
         return $this->db->lastInsertId();
     }
 

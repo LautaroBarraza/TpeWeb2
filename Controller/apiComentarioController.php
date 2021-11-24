@@ -42,7 +42,8 @@ class ApiComentarioController extends apiController{
          $comentario = $body->comentario;
          $nota = $body->nota;
          $deportista = $body->id_deportista;
-         $comentario =$this->model->insertComentario($comentario, $nota, $deportista);
+         $username = $body->nombreUsuario;
+         $comentario =$this->model->insertComentario($comentario, $nota, $deportista,$username);
          if($comentario){
             $this->view->response("el comentario fue insertado con exito", 200);
         }else{

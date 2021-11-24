@@ -33,7 +33,6 @@ async function getComentarios(){
         let response = await fetch(API_URL);
         let comentarios = await response.json();
         getComentarioEspecifico(comentarios);
-        console.log(comentarios);
         
 
     } catch(e){
@@ -69,15 +68,16 @@ function getComentarioEspecifico(comentarios){
 async function agregarComentario(){
     let id_deportista = document.querySelector("#id_deportista").textContent;
     let texto_comentario = document.querySelector("#comentario").value;
-    
     let select_notas = document.querySelector("#nota-jugador");
-    console.log(select_notas.value)
+    let nombreUsuario= document.querySelector("#nombreUsuario");
+    console.log(nombreUsuario.innerHTML);
 
 
     let comentario = {
         "comentario": texto_comentario,
         "nota": select_notas.value,
-        "id_deportista": id_deportista
+        "id_deportista": id_deportista,
+        "nombreUsuario": nombreUsuario.innerHTML
     }
 
     try{

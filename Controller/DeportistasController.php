@@ -32,9 +32,12 @@ class DeportistasController
     function showDeportista($deportista)
     {
         $estaLogeado = $this->authHelper->checkLogin();
+        if ($estaLogeado) {
+            $nombreUsuario = $this->authHelper->getUserName();
+        }
         $rol= $this->authHelper->esAdmin();
         $deportista = $this->model->getDeportista($deportista);
-        $this->view->showUnDeportista($deportista, $estaLogeado, $rol);
+        $this->view->showUnDeportista($deportista, $estaLogeado, $rol,$nombreUsuario);
     }
 
     function showDeporte($deporte)

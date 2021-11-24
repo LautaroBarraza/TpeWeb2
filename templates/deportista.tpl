@@ -3,6 +3,7 @@
 
 
     <body>
+
         <div class="d-flex flex-column align-items-center justify-items-center align-items-center h-75 gap-3 rounded-3 p-4 mt-4 w-100 bg-white">
             <h1>{$titulo}</h1>
             <ul class="d-flex flex-column w-100 list-group p-3">
@@ -16,6 +17,8 @@
         {include file="./vue/comentarios.tpl"}
     {if $logeado}
         {include file="./forms/formComentarioItem.tpl"}
+        <p id="nombreUsuario">{$nombreUsuario}<p>
     {/if}    
+    
         <script src="../js/comentarios.js"></script>
     </body>
