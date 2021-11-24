@@ -8,19 +8,19 @@ class usuarioView{
 
     function showInicio(){
     $smarty = new Smarty();
-    $smarty->display('templates/formBienvenido.tpl');
+    $smarty->display('templates/forms/formBienvenido.tpl');
     }
 
     function showLogin($error =''){
         $smarty = new Smarty();
         $smarty->assign('error', $error);
-        $smarty->display('templates/formLogin.tpl');
+        $smarty->display('templates/forms/formLogin.tpl');
     }
 
     function showRegister($error =''){
         $smarty = new Smarty();
         $smarty->assign('error', $error);
-        $smarty->display('templates/formRegister.tpl');
+        $smarty->display('templates/forms/formRegister.tpl');
     }
 
     function showUsers($users, $rol){

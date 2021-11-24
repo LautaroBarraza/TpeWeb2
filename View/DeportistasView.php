@@ -49,9 +49,13 @@ class DeportistasView
             $smarty->assign('deportistas', $arrayDeporte);
             $smarty->display('templates/deporte.tpl');
         } else {
-            $smarty = new Smarty();
-            $smarty->assign('error', "Actualmente no se encuentran deportistas para el deporte solicitado");
-            $smarty->display('templates/error.tpl');
+            $this->showError("Actualmente no se encuentran deportistas para el deporte solicitado");
         }
+    }
+
+    function showError($error){
+        $smarty = new Smarty();
+        $smarty->assign('error', $error);
+        $smarty->display('templates/error.tpl');
     }
 }
