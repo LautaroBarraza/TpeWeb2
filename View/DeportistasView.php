@@ -7,7 +7,7 @@ class DeportistasView
     {
     }
 
-    function showDeportistas($deportistas, $esAdmin, $deportes, $userName = null)
+    function showDeportistas($deportistas, $estalogeado, $deportes, $userName = null, $rol)
     {
 
         $arrayDeportista = array();
@@ -19,16 +19,19 @@ class DeportistasView
         $smarty->assign('deportistas', $arrayDeportista);
         $smarty->assign('deportes', $deportes);
         $smarty->assign('nombreUsuario', $userName);
-        $smarty->assign('rango', $esAdmin);
+        $smarty->assign('logeado', $estalogeado);
+        $smarty->assign('rol', $rol);
         $smarty->display('templates/deportistas.tpl');
     }
 
 
-    function showUnDeportista($deportista)
+    function showUnDeportista($deportista, $estalogeado, $rol)
     {
         $smarty = new Smarty();
         $smarty->assign('titulo', $deportista->nombre);
         $smarty->assign('deportista', $deportista);
+        $smarty->assign('logeado', $estalogeado);
+        $smarty->assign('rol', $rol);
         $smarty->display('templates/deportista.tpl');
     }
 

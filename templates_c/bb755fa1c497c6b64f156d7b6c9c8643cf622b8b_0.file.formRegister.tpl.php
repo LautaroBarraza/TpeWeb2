@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-25 17:38:15
-  from 'C:\xampp\htdocs\web2\TpeWeb2\templates\formRegister.tpl' */
+/* Smarty version 3.1.39, created on 2021-11-22 17:27:34
+  from 'C:\xampp\htdocs\web2\TpeParte2\templates\formRegister.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6176cf67dfdb47_26762473',
+  'unifunc' => 'content_619bc4f603de64_77107638',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'ff9c44661a296996b7191a0dd7c2c96df9095795' => 
+    'bb755fa1c497c6b64f156d7b6c9c8643cf622b8b' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\web2\\TpeWeb2\\templates\\formRegister.tpl',
+      0 => 'C:\\xampp\\htdocs\\web2\\TpeParte2\\templates\\formRegister.tpl',
       1 => 1634254858,
       2 => 'file',
     ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:head.tpl' => 1,
   ),
 ),false)) {
-function content_6176cf67dfdb47_26762473 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619bc4f603de64_77107638 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

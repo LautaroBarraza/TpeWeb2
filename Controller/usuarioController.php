@@ -2,6 +2,7 @@
 
 $view;
 $model;
+$authHelper;
 
 class usuarioController
 {
@@ -9,6 +10,7 @@ class usuarioController
     {
         $this->model = new usuarioModel();
         $this->view = new usuarioView();
+        $this->authHelper = new AuthHelper();
     }
 
 
@@ -34,13 +36,13 @@ class usuarioController
             $userName = $_POST['username'];
             $userPassword = $_POST['password'];
         }
-
         $user = $this->model->getUser($userName);
         if ($user && $user->contrasenia) {
             //aca mostraria el home
             session_start();
             $_SESSION['username'] = $userName;
-            header("Location: " . BASE_URL . "home");
+            $_SESSION['rol']= $user->rol;
+            $this->authHelper->showBaseHome();
         } else {
             //aca tendria que poner bien si no se puede loguear
             $this->view->showLogin("Contrasenia y/o nombre de usuario incorrecto");
@@ -55,11 +57,11 @@ class usuarioController
             $userPassword = password_hash($_POST['password'], PASSWORD_BCRYPT);
             $verifyUserPassword = $_POST['verifypassword'];
             //$userAdmin=1;
-
             $usuarioRepetido = $this->model->getUser($userName);
             if (password_verify($verifyUserPassword, $userPassword)) {
                 if (empty($usuarioRepetido)) {
-                    $this->model->insertUsuario($userName, $userPassword);
+                    $rol=0;
+                    $this->model->insertUsuario($userName, $userPassword, $rol);
                     header("Location: " . BASE_URL . "login");
                 } else {
                     $this->view->showRegister("nombre de usuario no disponible");
@@ -77,4 +79,29 @@ class usuarioController
         session_destroy();
         header("Location: " . BASE_URL . "inicio");
     }
+
+    function tableUsers(){
+        $rol = $this->authHelper->esAdmin();
+        $users= $this->model->getUsers();
+        $this->view->showUsers($users, $rol);
+    }
+
+    function quitarPermisos($id){
+        $rol = 0;
+        $this->model->editPermiso($rol, $id);
+        header("Location: " . BASE_URL . "showUsers");
+    }
+
+    function darPermisos($id){
+        $rol = 1;
+        $this->model->editPermiso($rol, $id);
+        header("Location: " . BASE_URL . "showUsers");
+    }
+
+    function deleteUser($id){
+        $this->model->deleteUser($id);
+        header("Location: " . BASE_URL . "showUsers");
+    }
 }
+
+

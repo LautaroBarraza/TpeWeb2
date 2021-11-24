@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-24 01:44:41
-  from 'C:\xampp\htdocs\web2\TpeWeb2\templates\deportistas.tpl' */
+/* Smarty version 3.1.39, created on 2021-11-23 02:36:29
+  from 'C:\xampp\htdocs\web2\TpeParte2\templates\deportistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619d8af9460f63_79145409',
+  'unifunc' => 'content_619c459d012163_44000508',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'cfe1bd06756a06cc4807e04feef3aed57dabcb40' => 
+    '6e4daa926ed348ac3ab758b5de0d7d123d3ec2be' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\web2\\TpeWeb2\\templates\\deportistas.tpl',
+      0 => 'C:\\xampp\\htdocs\\web2\\TpeParte2\\templates\\deportistas.tpl',
       1 => 1637631385,
       2 => 'file',
     ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./forms/formEditDeporte.tpl' => 1,
   ),
 ),false)) {
-function content_619d8af9460f63_79145409 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619c459d012163_44000508 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

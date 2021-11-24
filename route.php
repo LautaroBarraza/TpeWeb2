@@ -23,17 +23,14 @@ $sessionController = new usuarioController();
 
 switch ($params[0]) {
 
+    //home
     case 'home':
         $controller->showHome();
         break;
+
+    // inicio, login, register
     case 'inicio':
         $sessionController->showInit();
-        break;
-    case 'Deportistas':
-        $controller->showDeportista($params[1]);
-        break;
-    case 'Deporte':
-        $controller->showDeporte($params[1]);
         break;
     case 'login':
         $sessionController->showLogin();
@@ -50,6 +47,16 @@ switch ($params[0]) {
     case 'logOut':
         $sessionController->logOut();
         break;
+
+
+    //deportistas y deportes
+    case 'Deportistas':
+        $controller->showDeportista($params[1]);
+        break;
+    case 'Deporte':
+        $controller->showDeporte($params[1]);
+        break;
+
     case 'insertDeportista':
         $controller->createDeportista();
         break;
@@ -68,6 +75,23 @@ switch ($params[0]) {
     case 'updateDeportista':
         $controller->editarDeportista();
         break;
+
+    //usuarios y administrador
+    case 'showUsers':
+        $sessionController->tableUsers();
+        break;
+    case 'quitarPermiso':
+        $sessionController->quitarPermisos($params[1]);
+        break;
+    case 'darPermiso':
+        $sessionController->darPermisos($params[1]);
+        break;
+    case 'deleteUsuario':
+        $sessionController->deleteUser($params[1]);
+        break;
+    
+    
+    
     default:
         echo "Url no encontrada";
         break;

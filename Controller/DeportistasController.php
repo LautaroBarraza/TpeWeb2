@@ -16,23 +16,25 @@ class DeportistasController
 
     function showHome()
     {
-
         $deportistas = $this->model->getDeportistasConDeporte();
         $deportes = $this->model->getDeportes();
-        $esAdmin = $this->authHelper->checkLogin();
+        $estaLogeado = $this->authHelper->checkLogin();
+        $rol= $this->authHelper->esAdmin();
 
         //si se logueo lo saludo y sino le muestro para que se logue
         $userName = null;
-        if ($esAdmin) {
+        if ($estaLogeado) {
             $userName = $this->authHelper->getUserName();
         }
-        $this->view->showDeportistas($deportistas, $esAdmin, $deportes, $userName);
+        $this->view->showDeportistas($deportistas, $estaLogeado, $deportes, $userName, $rol);
     }
 
     function showDeportista($deportista)
     {
+        $estaLogeado = $this->authHelper->checkLogin();
+        $rol= $this->authHelper->esAdmin();
         $deportista = $this->model->getDeportista($deportista);
-        $this->view->showUnDeportista($deportista);
+        $this->view->showUnDeportista($deportista, $estaLogeado, $rol);
     }
 
     function showDeporte($deporte)
@@ -44,35 +46,35 @@ class DeportistasController
     function createDeportista()
     {
         $this->model->insertDeportista($_POST['nombre'], $_POST['apellido'], $_POST['edad'], $_POST['deporte']);
-        header("Location: " . BASE_URL . "home");
+        $this->authHelper->showBaseHome();
     }
 
     function createDeporte()
     {
         $this->model->insertDeporte($_POST['deporte']);
-        header("Location: " . BASE_URL . "home");
+        $this->authHelper->showBaseHome();
     }
 
     function borrarDeportista($id_Deportista)
     {
         $this->model->deleteDeportista($id_Deportista);
-        header("Location: " . BASE_URL . "home");
+        $this->authHelper->showBaseHome();
     }
 
     function borrarDeporte()
     {
         $this->model->deleteDeporte($_POST['deporte']);
-        header("Location: " . BASE_URL . "home");
+        $this->authHelper->showBaseHome();
     }
     function editarDeporte()
     {
         $this->model->updateDeporte($_POST['deporte'], $_POST['deporteEditado']);
-        header("Location: " . BASE_URL . "home");
+        $this->authHelper->showBaseHome();
     }
 
     function editarDeportista()
     {
         $this->model->updateDeportista($_POST['deportistaEdit'], $_POST['nombreEdit'], $_POST['apellidoEdit'], $_POST['edadEdit'], $_POST['deporteEdit']);
-        header("Location: " . BASE_URL . "home");
+        $this->authHelper->showBaseHome();
     }
 }

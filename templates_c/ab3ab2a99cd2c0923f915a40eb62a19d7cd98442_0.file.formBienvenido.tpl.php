@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-17 01:02:23
-  from 'C:\xampp\htdocs\web2\TpeWeb2\templates\formBienvenido.tpl' */
+/* Smarty version 3.1.39, created on 2021-11-10 18:05:31
+  from 'C:\xampp\htdocs\web2\TpeParte2\templates\formBienvenido.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616b59ffb2ee83_49704885',
+  'unifunc' => 'content_618bfbdb5c0bd3_67345990',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '670dac73a7cf76b5538de2f0d8e7d81fd2d9d28d' => 
+    'ab3ab2a99cd2c0923f915a40eb62a19d7cd98442' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\web2\\TpeWeb2\\templates\\formBienvenido.tpl',
+      0 => 'C:\\xampp\\htdocs\\web2\\TpeParte2\\templates\\formBienvenido.tpl',
       1 => 1634254858,
       2 => 'file',
     ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:head.tpl' => 1,
   ),
 ),false)) {
-function content_616b59ffb2ee83_49704885 (Smarty_Internal_Template $_smarty_tpl) {
+function content_618bfbdb5c0bd3_67345990 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <?php $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

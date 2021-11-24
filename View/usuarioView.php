@@ -23,4 +23,14 @@ class usuarioView{
         $smarty->display('templates/formRegister.tpl');
     }
 
+    function showUsers($users, $rol){
+        if(isset($users)){
+            $smarty = new Smarty();
+            $smarty->assign('titulo', "Usuarios");
+            $smarty->assign('usuarios', $users);
+            $smarty->assign('rol', $rol);
+            $smarty->display('templates/usuarios.tpl');
+        }
+    }
+
 }

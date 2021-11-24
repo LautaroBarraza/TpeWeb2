@@ -24,5 +24,16 @@ class AuthHelper{
     function getUserName(){
         return $_SESSION['username'];
     }
+    function esAdmin(){
+        if(isset($_SESSION["rol"]) && $_SESSION["rol"] == 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    function showBaseHome(){
+        header("Location: " . BASE_URL . "home");
+    }
 
 }

@@ -1,6 +1,7 @@
 
 {include file="head.tpl"}
 
+
         <body>
             <div style="--bs-bg-opacity: .5;" class="bg-secondary min-vh-100 justify-content-center gap-3 d-flex ">
                 <div class="d-flex flex-column align-items-center justify-items-center h-75 gap-3 rounded-3 p-4 mt-4 w-50 bg-white">
@@ -15,5 +16,7 @@
                         <ul>
                 </div>
             </div>
+            
         </body>
+
     </html>

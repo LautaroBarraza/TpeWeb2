@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-24 01:46:02
-  from 'C:\xampp\htdocs\web2\TpeWeb2\templates\deporte.tpl' */
+/* Smarty version 3.1.39, created on 2021-11-23 02:31:36
+  from 'C:\xampp\htdocs\web2\TpeParte2\templates\deporte.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619d8b4a35af04_91782032',
+  'unifunc' => 'content_619c4478168d30_13281194',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'd511e5e4f818c034c596acc6917e4c7f790d3ed9' => 
+    'e1adfa44dc1f0a6db978a6f73a81299bc53b2b84' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\web2\\TpeWeb2\\templates\\deporte.tpl',
+      0 => 'C:\\xampp\\htdocs\\web2\\TpeParte2\\templates\\deporte.tpl',
       1 => 1637630586,
       2 => 'file',
     ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:head.tpl' => 1,
   ),
 ),false)) {
-function content_619d8b4a35af04_91782032 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619c4478168d30_13281194 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
