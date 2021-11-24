@@ -35,6 +35,7 @@ class comentariosModel
     {
         $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario,nota, id_deportista) VALUES(?,?,?)");
         $sentencia->execute(array($comentario,$nota, $deportista));
+        return $this->db->lastInsertId();
     }
 
     function deleteComentario($id_comentario)
@@ -43,12 +44,6 @@ class comentariosModel
             "delete from comentarios where id_comentario=?"
         );
         $sentencia->execute(array($id_comentario));
-    }
-
-    function updateComentario($id_comentario, $comentario,$nota, $id_deportista)
-    {
-        $sentencia = $this->db->prepare("update deportistas set comentario=?,nota=?, id_deportista=? where id_comentario=?");
-        $sentencia->execute(array($id_comentario, $comentario,$nota, $id_deportista));
     }
 
 }

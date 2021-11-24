@@ -14,16 +14,23 @@ class ApiComentarioController extends apiController{
     }
 
     function obtenerComentarios($params = []){
+        // si no viene una id por parametro
         if(empty($params)){
             $comentarios = $this->model->getcomentarios();
-            return $this->view->response($comentarios,200);
+            if(!empty($comentarios)){
+                return $this->view->response($comentarios,200);
+            }else{
+                return $this->view->response("comentarios not found",404);
+            }
           }
+          // si viene una id por parametro
             else {
                 $comentario = $this->model->getComentario($params[":ID"]);
                 if(!empty($comentario)) {
                     return $this->view->response($comentario,200);
+                }else{
+                    return $this->view->response("Comentario not found", 404);
                 }
-      
             }
     }
 
@@ -35,26 +42,13 @@ class ApiComentarioController extends apiController{
          $comentario = $body->comentario;
          $nota = $body->nota;
          $deportista = $body->id_deportista;
-         $this->model->insertComentario($comentario, $nota, $deportista);
-    }
-
-    public function actualizarComentario($params = []) {
-        $comentario_id = $params[':ID'];
-        $comentario = $this->model->getDeportista($comentario_id);
-
-        if ($comentario) {
-            $body = $this->getData();
-            $comentario = $body->comentario;
-            $nota = $body->nota;
-            $deportista = $body->id_deportista;
-            $this->model->updateComentario($comentario,$nota, $deportista);
-            $this->view->response("Tarea id=$comentario_id actualizada con éxito", 200);
+         $comentario =$this->model->insertComentario($comentario, $nota, $deportista);
+         if($comentario){
+            $this->view->response("el comentario fue insertado con exito", 200);
+        }else{
+            $this->view->response("El comentario no se pudo insertar", 404);
         }
-        else 
-            $this->view->response("Task id=$comentario_id not found", 404);
     }
-
- 
 
     public function borrarComentario($params = []) {
         $comentario_id = $params[':ID'];
