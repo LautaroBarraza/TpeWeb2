@@ -48,7 +48,6 @@ switch ($params[0]) {
         $sessionController->logOut();
         break;
 
-
     //deportistas y deportes
     case 'Deportistas':
         $controller->showDeportista($params[1]);

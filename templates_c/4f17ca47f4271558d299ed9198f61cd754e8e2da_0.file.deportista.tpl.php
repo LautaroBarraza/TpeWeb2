@@ -1,30 +1,32 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-24 01:44:18
+/* Smarty version 3.1.39, created on 2021-11-24 20:08:22
   from 'C:\xampp\htdocs\web2\TpeWeb2\templates\deportista.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619d8ae29158d4_46543719',
+  'unifunc' => 'content_619e8da6851369_97756766',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4f17ca47f4271558d299ed9198f61cd754e8e2da' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TpeWeb2\\templates\\deportista.tpl',
-      1 => 1637711744,
+      1 => 1637780899,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:head.tpl' => 1,
+    'file:nav.tpl' => 1,
     'file:./vue/comentarios.tpl' => 1,
     'file:./forms/formComentarioItem.tpl' => 1,
   ),
 ),false)) {
-function content_619d8ae29158d4_46543719 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619e8da6851369_97756766 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
