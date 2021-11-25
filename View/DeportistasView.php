@@ -36,7 +36,7 @@ class DeportistasView
         $smarty->display('templates/deportista.tpl');
     }
 
-    function showUnDeporte($deporte)
+    function showUnDeporte($deporte, $estalogeado)
     {
 
         $arrayDeporte = array();
@@ -48,15 +48,17 @@ class DeportistasView
             $smarty = new Smarty();
             $smarty->assign('titulo', $arrayDeporte[0]->deporte);
             $smarty->assign('deportistas', $arrayDeporte);
+            $smarty->assign('logeado', $estalogeado);
             $smarty->display('templates/deporte.tpl');
         } else {
-            $this->showError("Actualmente no se encuentran deportistas para el deporte solicitado");
+            $this->showError("Actualmente no se encuentran deportistas para el deporte solicitado", $estalogeado);
         }
     }
 
-    function showError($error){
+    function showError($error, $estalogeado){
         $smarty = new Smarty();
         $smarty->assign('error', $error);
+        $smarty->assign('logeado', $estalogeado);
         $smarty->display('templates/error.tpl');
     }
 }

@@ -1,5 +1,6 @@
 
 {include file="head.tpl"}
+{include file="nav.tpl"}
 
 
         <body>

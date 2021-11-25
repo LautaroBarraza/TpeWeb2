@@ -46,8 +46,9 @@ class DeportistasController
 
     function showDeporte($deporte)
     {
+        $estaLogeado = $this->authHelper->checkLogin();
         $deporte = $this->model->getDeporte($deporte);
-        $this->view->showUnDeporte($deporte);
+        $this->view->showUnDeporte($deporte, $estaLogeado);
     }
 
     function createDeportista()
