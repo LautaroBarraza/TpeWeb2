@@ -32,12 +32,16 @@ class DeportistasController
     function showDeportista($deportista)
     {
         $estaLogeado = $this->authHelper->checkLogin();
+        $deportista = $this->model->getDeportista($deportista);
+        $nombreUsuario= null;
+        $rol = null;
         if ($estaLogeado) {
             $nombreUsuario = $this->authHelper->getUserName();
-        }
-        $rol= $this->authHelper->esAdmin();
-        $deportista = $this->model->getDeportista($deportista);
-        $this->view->showUnDeportista($deportista, $estaLogeado, $rol,$nombreUsuario);
+            $rol= $this->authHelper->esAdmin();
+            $this->view->showUnDeportista($deportista, $estaLogeado, $rol,$nombreUsuario);
+        }else{
+            $this->view->showUnDeportista($deportista, $estaLogeado, $rol,$nombreUsuario);
+        }   
     }
 
     function showDeporte($deporte)
@@ -83,13 +87,14 @@ class DeportistasController
         $this->authHelper->showBaseHome();
         } else {
             $this->view->showError("Faltan completar campos"); 
+        }
     }
 
     function editarDeporte()
     {
         if(isset($_POST['deporte'], $_POST['deporteEditado'])){
-        $this->model->updateDeporte($_POST['deporte'], $_POST['deporteEditado']);
-        $this->authHelper->showBaseHome();
+            $this->model->updateDeporte($_POST['deporte'], $_POST['deporteEditado']);
+            $this->authHelper->showBaseHome();
         } else {
             $this->view->showError("Faltan completar campos");
         }
@@ -105,6 +110,4 @@ class DeportistasController
             $this->view->showError("Faltan completar campos");
         }
     }
-}
-
 }

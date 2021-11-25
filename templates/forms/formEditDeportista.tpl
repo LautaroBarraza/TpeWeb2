@@ -6,9 +6,9 @@
                                 <option value='{$deportista->id_deportista}'>{$deportista->apellido}</option>
                             {/foreach}
                         </select>
-                        <input type="text" name="nombreEdit" id="" placeholder="actualice nombre de deportista">
-                        <input type="text" name="apellidoEdit" placeholder="apellido">
-                        <input type="number" name="edadEdit" placeholder="edad">
+                        <input type="text" name="nombreEdit" id="" placeholder="actualice nombre de deportista" required>
+                        <input type="text" name="apellidoEdit" placeholder="apellido" required>
+                        <input type="number" name="edadEdit" placeholder="edad" required>
                         <select name="deporteEdit" id="">
                             {foreach from=$deportes item=$deporte}
                             <option value='{$deporte->id_deporte}'>{$deporte->deporte}</option>

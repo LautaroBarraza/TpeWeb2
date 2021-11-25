@@ -1,7 +1,5 @@
 {include file="head.tpl"}
 {include file="nav.tpl"}
-
-
     <body>
 
         <div class="d-flex flex-column align-items-center justify-items-center align-items-center h-75 gap-3 rounded-3 p-4 mt-4 w-100 bg-white">
@@ -20,5 +18,7 @@
         <p id="nombreUsuario">{$nombreUsuario}<p>
     {/if}    
     
-        <script src="../js/comentarios.js"></script>
+    
+        <script src="./js/comentarios.js"></script>
     </body>
+    </html>

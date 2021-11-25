@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-24 01:44:41
+/* Smarty version 3.1.39, created on 2021-11-25 02:01:01
   from 'C:\xampp\htdocs\web2\TpeWeb2\templates\forms\formEditDeportista.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619d8af967ecb3_09104274',
+  'unifunc' => 'content_619ee04dbb76d9_25230456',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2942e06a64027e96f685dfd83b8f997994b1ef15' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TpeWeb2\\templates\\forms\\formEditDeportista.tpl',
-      1 => 1637596917,
+      1 => 1637801972,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_619d8af967ecb3_09104274 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619ee04dbb76d9_25230456 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div>
                     <form class="p-3 border border-1 rounded-3 justify-content-center gap-3 d-flex flex-column" action="updateDeportista" method="post">
                         <h4 class="text-center pb-1 border-bottom">Editar Deportista</h4>
@@ -38,9 +38,9 @@ $_smarty_tpl->tpl_vars['deportista']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </select>
-                        <input type="text" name="nombreEdit" id="" placeholder="actualice nombre de deportista">
-                        <input type="text" name="apellidoEdit" placeholder="apellido">
-                        <input type="number" name="edadEdit" placeholder="edad">
+                        <input type="text" name="nombreEdit" id="" placeholder="actualice nombre de deportista" required>
+                        <input type="text" name="apellidoEdit" placeholder="apellido" required>
+                        <input type="number" name="edadEdit" placeholder="edad" required>
                         <select name="deporteEdit" id="">
                             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['deportes']->value, 'deporte');

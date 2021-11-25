@@ -83,7 +83,8 @@ class usuarioController
     function tableUsers(){
         $rol = $this->authHelper->esAdmin();
         $users= $this->model->getUsers();
-        $this->view->showUsers($users, $rol);
+        $estaLogeado = $this->authHelper->checkLogin();
+        $this->view->showUsers($users, $rol,$estaLogeado);
     }
 
     function quitarPermisos($id){

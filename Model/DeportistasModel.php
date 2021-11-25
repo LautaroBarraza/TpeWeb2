@@ -85,15 +85,15 @@ class DeportistasModel
         $sentencia->execute(array($id_deporte));
     }
 
-    function updateDeporte($deporte, $deporteEditado)
+    function updateDeporte($id_deporte, $deporteEditado)
     {
-        $sentencia = $this->db->prepare("update deporte set deporte='$deporteEditado' where deporte.id_deporte=?");
-        $sentencia->execute(array($deporte));
+        $sentencia = $this->db->prepare("UPDATE deporte set deporte=? where id_deporte=?");
+        $sentencia->execute(array($deporteEditado, $id_deporte));
     }
 
     function updateDeportista($id_deportista, $nombre, $apellido, $edad, $id_deporte)
     {
-        $sentencia = $this->db->prepare("update deportistas set nombre='$nombre', apellido='$apellido',edad='$edad',id_deporte='$id_deporte' where deportistas.id_deportista=?");
-        $sentencia->execute(array($id_deportista));
+        $sentencia = $this->db->prepare("UPDATE deportistas set nombre=?, apellido=?,edad=?,id_deporte=? where id_deportista=?");
+        $sentencia->execute(array($nombre,$apellido,$edad,$id_deporte,$id_deportista));
     }
 }

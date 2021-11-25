@@ -15,16 +15,15 @@
             </thead>
             <tbody>
             {foreach from= $usuarios item=$usuario}
-            <tr scope="row">
+                <tr scope="row">
                 <td>{$usuario->nombreUsuario}</td>
                 {if $usuario->rol==1}
-                <td>Administrador</td>
-                <td><button type="submit" class="btn btn-light"><a href="quitarPermiso/{$usuario->id_usuarios}">Quitar permiso</a></button></td>
-                
-                   {else}
+                    <td>Administrador</td>
+                    <td><button type="submit" class="btn btn-light"><a href="quitarPermiso/{$usuario->id_usuarios}">Quitar permiso</a></button></td>
+                {else}
                     <td>Registrado</td>
                     <td><button type="submit" class="btn btn-light"><a href="darPermiso/{$usuario->id_usuarios}">Dar permiso</a></button></td>
-                    {/if}
+                {/if}
                 <td><button type="submit" class="btn btn-light"><a href="deleteUsuario/{$usuario->id_usuarios}">Eliminar</a></button></td>
             </tr>
             {/foreach}

@@ -4,9 +4,9 @@
 
                         <h4 class="text-center pb-1 border-bottom">Nuevo Deportista</h4>
                         
-                        <input type="text" name="nombre" placeholder="nombre">
-                        <input type="text" name="apellido" placeholder="apellido">
-                        <input type="number" name="edad" placeholder="edad">
+                        <input type="text" name="nombre" placeholder="nombre" required>
+                        <input type="text" name="apellido" placeholder="apellido" required>
+                        <input type="number" name="edad" placeholder="edad" required>
                         <select name="deporte" id="">
                             {foreach from=$deportes item=$deporte}
                             <option value='{$deporte->id_deporte}'>{$deporte->deporte}</option>

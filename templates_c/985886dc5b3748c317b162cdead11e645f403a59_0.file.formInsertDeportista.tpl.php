@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-24 01:44:41
+/* Smarty version 3.1.39, created on 2021-11-25 02:01:01
   from 'C:\xampp\htdocs\web2\TpeWeb2\templates\forms\formInsertDeportista.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619d8af95cdb49_72381391',
+  'unifunc' => 'content_619ee04dacc662_78884929',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '985886dc5b3748c317b162cdead11e645f403a59' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TpeWeb2\\templates\\forms\\formInsertDeportista.tpl',
-      1 => 1637596797,
+      1 => 1637801999,
       2 => 'file',
     ),
   ),
@@ -20,16 +20,16 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_619d8af95cdb49_72381391 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619ee04dacc662_78884929 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div>
             
                     <form style="--bs-bg-opacity: .2;" class="mb-4 p-3 border border-1 rounded-3 justify-content-center gap-3 d-flex flex-column" action="insertDeportista" method="post">
 
                         <h4 class="text-center pb-1 border-bottom">Nuevo Deportista</h4>
                         
-                        <input type="text" name="nombre" placeholder="nombre">
-                        <input type="text" name="apellido" placeholder="apellido">
-                        <input type="number" name="edad" placeholder="edad">
+                        <input type="text" name="nombre" placeholder="nombre" required>
+                        <input type="text" name="apellido" placeholder="apellido" required>
+                        <input type="number" name="edad" placeholder="edad" required>
                         <select name="deporte" id="">
                             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['deportes']->value, 'deporte');

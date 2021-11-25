@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2021 a las 19:01:53
+-- Tiempo de generación: 25-11-2021 a las 02:53:18
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -31,19 +31,17 @@ CREATE TABLE `comentarios` (
   `id_comentario` int(11) NOT NULL,
   `comentario` varchar(400) NOT NULL,
   `nota` int(11) NOT NULL,
-  `id_deportista` int(11) NOT NULL
+  `id_deportista` int(11) NOT NULL,
+  `nombreUsuario` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `comentarios`
 --
 
-INSERT INTO `comentarios` (`id_comentario`, `comentario`, `nota`, `id_deportista`) VALUES
-(1, 'el mejor de todos los tiempos', 5, 6),
-(26, 'hola', 0, 7),
-(29, 'el mejor sin duda', 5, 6),
-(31, 'Messi el mejor', 5, 6),
-(38, 'el segundo mejor', 1, 7);
+INSERT INTO `comentarios` (`id_comentario`, `comentario`, `nota`, `id_deportista`, `nombreUsuario`) VALUES
+(39, 'el mejor de todos los tiempos', 5, 6, 'lau'),
+(41, 'ggg', 1, 6, 'lau');
 
 -- --------------------------------------------------------
 
@@ -62,7 +60,8 @@ CREATE TABLE `deporte` (
 
 INSERT INTO `deporte` (`id_deporte`, `deporte`) VALUES
 (4, 'tennis'),
-(5, 'futbol');
+(5, 'futbol'),
+(7, 'basquet');
 
 -- --------------------------------------------------------
 
@@ -84,9 +83,9 @@ CREATE TABLE `deportistas` (
 
 INSERT INTO `deportistas` (`id_deportista`, `nombre`, `apellido`, `edad`, `id_deporte`) VALUES
 (6, 'lionel', 'messi', 34, 5),
-(7, 'Cristiano', 'Ronaldo', 36, 5),
 (11, 'paulo', 'dybala', 27, 5),
-(12, 'juan', 'del potro', 35, 4);
+(13, 'juan', 'del protro', 35, 4),
+(14, 'sergio', 'aguero', 33, 5);
 
 -- --------------------------------------------------------
 
@@ -119,7 +118,8 @@ INSERT INTO `usuarios` (`id_usuarios`, `nombreUsuario`, `contrasenia`, `rol`) VA
 --
 ALTER TABLE `comentarios`
   ADD PRIMARY KEY (`id_comentario`),
-  ADD KEY `FK_id_deportista` (`id_deportista`);
+  ADD KEY `FK_id_deportista` (`id_deportista`),
+  ADD KEY `FK_id_usuarios` (`nombreUsuario`);
 
 --
 -- Indices de la tabla `deporte`
@@ -148,25 +148,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de la tabla `deporte`
 --
 ALTER TABLE `deporte`
-  MODIFY `id_deporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_deporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `deportistas`
 --
 ALTER TABLE `deportistas`
-  MODIFY `id_deportista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_deportista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_usuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
@@ -176,7 +176,7 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  ADD CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`id_deportista`) REFERENCES `deportistas` (`id_deportista`);
+  ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`id_deportista`) REFERENCES `deportistas` (`id_deportista`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `deportistas`
